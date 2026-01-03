@@ -6,18 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO -->
-    <title>Nome da Empresa | Soluções Digitais Profissionais</title>
+    <title>ED</title>
     <meta name="description" content="Empresa especializada em soluções digitais, desenvolvimento de sites, sistemas e tecnologia para impulsionar negócios.">
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
 
     <!-- Favicon -->
     <link rel="icon" href="Img/E D (2).png">
 </head>
 <body>
+
+
 
     <!-- HEADER: Identidade + Navegação -->
     <header>
@@ -27,15 +30,35 @@
                 <img src="Img/E D (2).png" alt="Nome da Empresa - Soluções Digitais">
             </div>
 
+            <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+     <div class="nav-wrapper">
             <nav aria-label="Menu principal">
-                <ul>
+                <ul class="nav-menu">
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#contato">Contato</a></li>
-                    <li class="whatsapp-link"><a href="https://api.whatsapp.com/send?phone=5515997342655&text=Ola, gostaria de saber mais sobre seus serviços" target="_blank"<img src="Img/icone-do-whatsapp.avif" alt="WhatsApp">Fale Conosco</a></li>
+                    <li class="whatsapp-link">
+                        <a href="https://api.whatsapp.com/send?phone=5515997342655&text=Ola" target="_blank">
+                            <img src="Img/icone-do-whatsapp.avif" alt="WhatsApp">Fale Conosco
+                        </a>
+                    </li>
                 </ul>
             </nav>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </div>
+</header>
         </div>
     </header>
 
@@ -164,25 +187,64 @@
         </section>
 
         <!-- CONTATO -->
-        <section id="contato" class="contact">
-            <div class="container">
-                <header class="section-header">
+      <section id="contato" class="contact">
+    <div class="container">
+        
+        <div class="contact-card">
+            
+            <div class="contact-grid">
+                <div class="contact-text-col">
                     <h2>Vamos conversar sobre seu projeto</h2>
                     <p>Estamos prontos para ajudar você a transformar suas ideias em realidade. Entre em contato conosco hoje mesmo.</p>
-                </header>
+                </div>
 
-                <div class="contact-content">
-
+                <div class="contact-info-col">
                     
-                    <address class="contact-info">
-                        <p><strong>E-mail:</strong> contato@empresa.com</p>
-                        <p><strong>Telefone:</strong> (00) 00000-0000</p>
-                        <p><strong>Endereço:</strong> Cidade - Estado</p>
-                    </address>
+                    <div class="contact-list">
+                        
+                        <div class="contact-item">
+                            <div class="icon-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                            </div>
+                            <div class="info-content">
+                                <span class="label">Email</span>
+                                <a href="mailto:Contato@empresa.com.br" class="value">Contato@empresa.com.br</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="icon-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            </div>
+                            <div class="info-content">
+                                <span class="label">Telefone</span>
+                                <a href="tel:12345678" class="value">(**) 1234-5678</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="icon-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div class="info-content">
+                                <span class="label">Endereço</span>
+                                <p class="value">Avenida do Chapolin Colorado, 0000<br>São Paulo - SP, 00000-000</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hours-card">
+                        <h3>Horario de Atendimento</h3>
+                        <p>Segunda a Sexta: 8h às 18h</p>
+                    </div>
 
                 </div>
             </div>
-        </section>
+        </div>
+
+    </div>
+</section>
 
     </main>
 
