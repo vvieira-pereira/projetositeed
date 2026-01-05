@@ -553,3 +553,129 @@ footer a {
 #google_translate_element {
     display: none;
 }
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* BOTÃO WHATSAPP */
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.btn-whatsapp img {
+    width: 18px;
+    height: 18px;
+}
+
+/* IDIOMAS */
+.language-switcher {
+    display: flex;
+    gap: 8px;
+}
+
+.language-switcher button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.language-switcher img {
+    width: 28px;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+
+.language-switcher img:hover {
+    transform: scale(1.1);
+}
+media (max-width: 768px) {
+
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1rem;
+    }
+
+    .btn-whatsapp {
+        width: 100%;
+        justify-content: center;
+    }
+}
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* MENU + BOTÕES NA MESMA LINHA */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* MENU */
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+/* AÇÕES */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* BOTÃO WHATSAPP */
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.btn-whatsapp img {
+    width: 18px;
+    height: 18px;
+}
+
+/* BANDEIRAS */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-switcher img {
+    width: 28px;
+    border-radius: 4px;
+    cursor: pointer;
+}
