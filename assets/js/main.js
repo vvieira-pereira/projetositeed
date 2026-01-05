@@ -1,17 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Seleciona os elementos
+
+    // MENU MOBILE
     const menuToggle = document.querySelector(".menu-toggle");
-    const menuList = document.querySelector("nav ul"); 
-    
-    // Só adiciona o evento se o botão existir no HTML
+    const menuList = document.querySelector("nav ul");
+
     if (menuToggle && menuList) {
         menuToggle.addEventListener("click", () => {
             menuList.classList.toggle("active");
-            // Opcional: Animar ícone do menu
             menuToggle.classList.toggle("open");
         });
 
-        // Fecha o menu ao clicar em um link
         const menuLinks = document.querySelectorAll("nav ul li a");
         menuLinks.forEach(link => {
             link.addEventListener("click", () => {
@@ -20,5 +18,28 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+
 });
 
+/* GOOGLE TRANSLATE */
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: 'pt',
+            autoDisplay: false
+        },
+        'google_translate_element'
+    );
+}
+
+function translateTo(lang) {
+    const interval = setInterval(() => {
+        const select = document.querySelector('.goog-te-combo');
+
+        if (select) {
+            select.value = lang;
+            select.dispatchEvent(new Event('change'));
+            clearInterval(interval);
+        }
+    }, 100);
+}

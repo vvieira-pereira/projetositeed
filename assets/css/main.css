@@ -527,3 +527,29 @@ footer a {
     width: 18px;
     height: 18px;
 }
+.language-switcher {
+    display: flex;
+    gap: 10px;
+}
+
+.language-switcher button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.language-switcher img {
+    width: 32px;
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.language-switcher img:hover {
+    transform: scale(1.1);
+}
+
+/* Esconde a barra do Google Translate */
+#google_translate_element {
+    display: none;
+}

@@ -46,6 +46,19 @@
                     <li class="whatsapp-link">
                         <a href="https://api.whatsapp.com/send?phone=5515997342655&text=Ola" target="_blank">Fale Conosco
                         </a>
+                    <!-- Botões de idioma -->
+<div class="language-switcher">
+    <button onclick="translateTo('pt')" aria-label="Português">
+        <img src="https://flagcdn.com/w40/br.png" alt="Português">
+    </button>
+
+    <button onclick="translateTo('en')" aria-label="English">
+        <img src="https://flagcdn.com/w40/us.png" alt="English">
+    </button>
+</div>
+
+<!-- Elemento oculto do Google Translate -->
+<div id="google_translate_element"></div>    
                     </li>
                 </ul>
             </nav>
@@ -269,6 +282,8 @@
 
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
 </body>
 </html>
