@@ -872,3 +872,14 @@ footer a {
     -webkit-mask-size: contain;
 }
 
+/* Remove a linha abaixo do menu */
+header, .navbar, .menu-container {
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove a linha na seção de serviços */
+.servicos-header, hr {
+    display: none; /* Se for uma tag <hr> */
+    border: none !important;
+}
