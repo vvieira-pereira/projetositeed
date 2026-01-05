@@ -43,4 +43,3 @@ function translateTo(lang) {
         }
     }, 100);
 }
-

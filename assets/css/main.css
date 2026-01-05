@@ -679,35 +679,3 @@ media (max-width: 768px) {
     border-radius: 4px;
     cursor: pointer;
 }
-/* 1. Esconde o frame da barra (o banner branco) */
-.goog-te-banner-frame.skiptranslate, 
-.goog-te-banner-frame {
-    display: none !important;
-    visibility: hidden !important;
-}
-
-/* 2. Força o corpo da página a voltar para o topo 0 */
-/* O Google adiciona "margin-top" ou "top" no body, aqui nós zeramos */
-body {
-    top: 0 !important;
-    position: static !important;
-}
-
-/* 3. Remove o espaço que o Google reserva no topo do HTML */
-html {
-    margin-top: 0 !important;
-}
-
-/* 4. Esconde o widget original caso ele tente aparecer */
-#google_translate_element {
-    display: none !important;
-}
-
-/* 5. Remove os pop-ups de tradução ao passar o mouse (opcional) */
-#goog-gt-tt, .goog-te-balloon-frame {
-    display: none !important;
-}
-.goog-text-highlight {
-    background: none !important;
-    box-shadow: none !important;
-}
