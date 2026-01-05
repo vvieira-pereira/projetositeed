@@ -845,4 +845,30 @@ footer a {
         transform: scale(1.1);
     }
 }
+.about-highlights {
+    margin-top: 1.5rem;
+}
+
+.about-highlights li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 0.75rem;
+    color: var(--color-gray);
+    line-height: 1.6;
+}
+
+/* Ícone de check */
+.about-highlights li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-primary); /* azul do site */
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17l-3.88-3.88-1.41 1.41L9 19 20.29 7.71 18.88 6.3z'/%3E%3C/svg%3E") no-repeat center;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17l-3.88-3.88-1.41 1.41L9 19 20.29 7.71 18.88 6.3z'/%3E%3C/svg%3E") no-repeat center;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+}
 
