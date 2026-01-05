@@ -1,45 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    // MENU MOBILE
     const menuToggle = document.querySelector(".menu-toggle");
-    const menuList = document.querySelector("nav ul");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const overlay = document.querySelector(".menu-overlay");
 
-    if (menuToggle && menuList) {
-        menuToggle.addEventListener("click", () => {
-            menuList.classList.toggle("active");
-            menuToggle.classList.toggle("open");
-        });
+    if (!menuToggle || !mobileMenu || !overlay) return;
 
-        const menuLinks = document.querySelectorAll("nav ul li a");
-        menuLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                menuList.classList.remove("active");
-                menuToggle.classList.remove("open");
-            });
-        });
+    function openMenu() {
+        mobileMenu.classList.add("active");
+        menuToggle.classList.add("active");
+        overlay.classList.add("active");
     }
 
+    function closeMenu() {
+        mobileMenu.classList.remove("active");
+        menuToggle.classList.remove("active");
+        overlay.classList.remove("active");
+    }
+
+    menuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.contains("active");
+        isOpen ? closeMenu() : openMenu();
+    });
+
+    overlay.addEventListener("click", closeMenu);
+
+    mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
 });
-
-/* GOOGLE TRANSLATE */
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-        {
-            pageLanguage: 'pt',
-            autoDisplay: false
-        },
-        'google_translate_element'
-    );
-}
-
-function translateTo(lang) {
-    const interval = setInterval(() => {
-        const select = document.querySelector('.goog-te-combo');
-
-        if (select) {
-            select.value = lang;
-            select.dispatchEvent(new Event('change'));
-            clearInterval(interval);
-        }
-    }, 100);
-}
