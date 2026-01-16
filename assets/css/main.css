@@ -1027,3 +1027,19 @@ header nav .nav-menu li a:hover {
         color: var(--color-primary);
     }
 }
+/* =========================
+   AJUSTE DE ESPAÇAMENTO ABOUT - MOBILE
+   ========================= */
+@media (max-width: 768px) {
+
+    /* Reduz o espaço entre carrossel e texto */
+    .about .container {
+        gap: 1rem; /* antes era 3rem */
+    }
+
+    /* Remove margem extra do carrossel no mobile */
+    .carousel-section {
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+    }
+}
