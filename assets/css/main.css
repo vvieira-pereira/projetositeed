@@ -930,7 +930,7 @@ header, .navbar, .menu-container {
 @media (max-width: 768px) {
     .carousel {
         height: 250px;
-        max-width: 90%;
+        max-width: 100%;
     }
 }
 /* ===== HOVER MENU DESKTOP ===== */
