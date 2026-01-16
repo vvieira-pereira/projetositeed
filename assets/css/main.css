@@ -732,6 +732,7 @@ footer a {
         display: none;
         padding: 90px 0 20px;
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        
     }
 
     .mobile-menu.active {
@@ -883,4 +884,146 @@ header, .navbar, .menu-container {
 .servicos-header, hr {
     display: none; /* Se for uma tag <hr> */
     border: none !important;
+}
+/* =========================
+   CARROSSEL SOBRE
+   ========================= */
+
+.carousel-section {
+    margin: 2rem 0;
+}
+
+.carousel {
+    width: 100%;
+    max-width: 520px;
+    height: 360px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: hsl(F8FAFC);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 5.2s ease-in-out;
+    will-change: transform;
+}
+
+.carousel-track img {
+    min-width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    object-fit: contain;
+    object-position: center center;
+
+    padding: 16px;
+    background-color: #F8FAFC;
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .carousel {
+        height: 360px;
+        max-width: 100%;
+    }
+}
+/* ===== HOVER MENU DESKTOP ===== */
+header nav .nav-menu li a {
+    color: var(--color-dark);
+    transition: color 0.25s ease;
+}
+
+header nav .nav-menu li a:hover {
+    color: var(--color-primary);
+}
+
+/* ===== HOVER MENU MOBILE ===== */
+.mobile-menu .nav-menu li a {
+    color: var(--color-dark);
+    transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+.mobile-menu .nav-menu li a:hover {
+    color: var(--color-primary);
+}
+
+.mobile-menu .nav-menu li a:active {
+    background-color: rgba(37, 99, 235, 0.08);
+}
+/* =========================
+   MENU MOBILE - FEEDBACK DE TOQUE
+   ========================= */
+@media (max-width: 768px) {
+    .mobile-menu .nav-menu li a {
+        width: 100%;
+        padding: 12px 20px;
+        border-radius: 8px;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .mobile-menu .nav-menu li a:active {
+        background-color: rgba(37, 99, 235, 0.12);
+        color: var(--color-primary);
+    }
+}
+/* =========================
+   MENU MOBILE - ITEM CLICADO
+   ========================= */
+@media (max-width: 768px) {
+    .mobile-menu .nav-menu li a {
+        width: 100%;
+        padding: 12px 20px;
+        border-radius: 8px;
+        transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .mobile-menu .nav-menu li a.menu-active {
+        background-color: rgba(37, 99, 235, 0.15);
+        color: var(--color-primary);
+    }
+}
+/* =========================
+   MENU MOBILE - PULSE VIA TOUCH (JS)
+   ========================= */
+@media (max-width: 768px) {
+
+    .mobile-menu .nav-menu li a {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding: 14px 22px;
+        border-radius: 10px;
+        transition: color 0.2s ease;
+    }
+
+    .mobile-menu .nav-menu li a::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            circle,
+            rgba(37, 99, 235, 0.30) 12%,
+            transparent 65%
+        );
+        opacity: 0;
+        transform: scale(0.2);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        pointer-events: none;
+    }
+
+    /* CLASSE CONTROLADA PELO JS */
+    .mobile-menu .nav-menu li a.touch-hover::after {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    .mobile-menu .nav-menu li a.touch-hover {
+        color: var(--color-primary);
+    }
 }
