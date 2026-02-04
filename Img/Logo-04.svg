@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1119.57 1006.3">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 172.21px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #2b3087;
+        font-family: CorplineDEMO-Regular, 'Corpline DEMO';
+      }
+
+      .cls-2 {
+        font-size: 417.89px;
+      }
+    </style>
+  </defs>
+  <g>
+    <text class="cls-2" transform="translate(273.85 424.83)"><tspan x="0" y="0">E</tspan></text>
+    <text class="cls-2" transform="translate(531.01 423.3)"><tspan x="0" y="0">D</tspan></text>
+  </g>
+  <text class="cls-1" transform="translate(75.5 608.33)"><tspan x="0" y="0">DESENHOS</tspan></text>
+  <text class="cls-1" transform="translate(4.45 783.4)"><tspan x="0" y="0">INDUSTRIAIS</tspan></text>
+</svg>

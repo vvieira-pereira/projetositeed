@@ -118,12 +118,14 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 70px;
+    min-height: 200px;
+    
 }
 
 /* LOGO */
 .logo img {
-    height: 100px; /* Logo: Img/E D (2).png */
+    height: 300px;
+    
 }
 
 /* MENU */
