@@ -1206,3 +1206,39 @@ header nav .nav-menu li a:hover {
     font-weight: inherit;
     margin-bottom: 0.5rem;
 }
+.logo img {
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: translateX(6px);
+}
+.logo {
+    position: relative;
+    overflow: hidden;
+}
+
+.logo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.6),
+        transparent
+    );
+}
+
+.logo:hover::after {
+    animation: shine 0.8s ease;
+}
+
+@keyframes shine {
+    to {
+        left: 150%;
+    }
+}
