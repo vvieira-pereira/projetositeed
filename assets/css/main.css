@@ -1242,3 +1242,27 @@ header nav .nav-menu li a:hover {
         left: 150%;
     }
 }
+/* EFEITO DE BRILHO NO TÍTULO PRINCIPAL */
+.shine-text {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(
+        110deg,
+        #0f172a 0%,
+        #0f172a 40%,
+        #b6b6b6 50%,
+        #0f172a 60%,
+        #0f172a 100%
+    );
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: shineText 3.5s linear infinite;
+}
+
+@keyframes shineText {
+    to {
+        background-position: -200% center;
+    }
+}
