@@ -279,7 +279,7 @@ nav a:hover {
 }
 
 .about-image img {
-    border-radius: 12px; /* Img/Sobre.jpg */
+    border-radius: 12px; 
 }
 
 .about-text h2 {
@@ -331,7 +331,7 @@ nav a:hover {
 
 /* O cartão principal azul claro */
 .contact-card {
-    background-color: #F0F6FF; /* Cor de fundo azul bem claro */
+    background-color: #F0F6FF; 
     border-radius: 24px;
     padding: 3rem;
     box-shadow: 0 4px 20px rgba(0,0,0,0.03);
@@ -375,7 +375,7 @@ nav a:hover {
 
 /* Caixinha azul do ícone */
 .icon-box {
-    background-color: #2563eb; /* Azul mais forte */
+    background-color: #2563eb; 
     color: white;
     width: 48px;
     height: 48px;
@@ -412,7 +412,7 @@ nav a:hover {
 
 /* Cartão Azul de Horário */
 .hours-card {
-    background-color: #1d4ed8; /* Azul ainda mais intenso */
+    background-color: #1d4ed8; 
     color: white;
     padding: 2rem;
     border-radius: 16px;
@@ -517,7 +517,7 @@ footer a {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: #ffffff; /* Cor oficial WhatsApp */
+    background-color: #ffffff; 
     color: #0f0101;
     padding: 0.5rem 1rem;
     border-radius: 999px;
@@ -685,7 +685,7 @@ footer a {
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1100; /* acima do overlay */
+    z-index: 1100; 
 }
 
 .menu-toggle span {
@@ -773,7 +773,7 @@ footer a {
     visibility: visible;
 }
 .mobile-menu {
-    z-index: 1100; /* SEMPRE maior que o overlay */
+    z-index: 1100; 
 }
 /* =========================
    BOTÃO FLUTUANTE WHATSAPP
@@ -882,7 +882,7 @@ header, .navbar, .menu-container {
 
 /* Remove a linha na seção de serviços */
 .servicos-header, hr {
-    display: none; /* Se for uma tag <hr> */
+    display: none; 
     border: none !important;
 }
 /* =========================
@@ -1034,7 +1034,7 @@ header nav .nav-menu li a:hover {
 
     /* Reduz o espaço entre carrossel e texto */
     .about .container {
-        gap: 1rem; /* antes era 3rem */
+        gap: 1rem; 
     }
 
     /* Remove margem extra do carrossel no mobile */
@@ -1139,14 +1139,14 @@ header nav .nav-menu li a:hover {
 /* Estilização da Seção */
 .partners {
     padding: 60px 0; /* Espaçamento acima e abaixo */
-    background-color: #f9f9f9; /* Cor de fundo leve para separar da seção anterior (opcional) */
+    background-color: #f9f9f9; 
     text-align: center;
 }
 
 .partners-title  {
     font-family: var(--font-base) ;
     font-size: 1.5rem;
-    color: #333; /* Ajuste para a cor do seu texto */
+    color: #333; 
     margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1159,8 +1159,8 @@ header nav .nav-menu li a:hover {
     /* Desktop: 4 colunas de tamanho igual (linha reta) */
     grid-template-columns: repeat(4, 1fr); 
     gap: 30px; /* Espaço entre as logos */
-    align-items: center; /* Centraliza verticalmente */
-    justify-items: center; /* Centraliza horizontalmente */
+    align-items: center; 
+    justify-items: center; 
 }
 
 /* Estilo das Imagens */
