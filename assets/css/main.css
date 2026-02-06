@@ -1266,3 +1266,16 @@ header nav .nav-menu li a:hover {
         background-position: -200% center;
     }
 }
+/* =========================
+   AJUSTE DO LOGO NO MOBILE
+   ========================= */
+@media (max-width: 768px) {
+
+    header .container {
+        min-height: 110px; /* header mais compacto no mobile */
+    }
+
+    .logo img {
+        height: 48px; /* logo proporcional no celular */
+    }
+}
