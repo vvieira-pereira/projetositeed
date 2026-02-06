@@ -1273,13 +1273,3 @@ header nav .nav-menu li a:hover {
         height: 48px; /* logo proporcional no celular */
     }
 }
-.logo img {
-    clip-path: inset(0 100% 0 0);
-    animation: blueprintReveal 1.2s ease-out forwards;
-}
-
-@keyframes blueprintReveal {
-    to {
-        clip-path: inset(0 0 0 0);
-    }
-}
