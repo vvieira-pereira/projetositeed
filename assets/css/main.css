@@ -1206,13 +1206,7 @@ header nav .nav-menu li a:hover {
     font-weight: inherit;
     margin-bottom: 0.5rem;
 }
-.logo img {
-    transition: transform 0.3s ease;
-}
 
-.logo img:hover {
-    transform: translateX(6px);
-}
 .logo {
     position: relative;
     overflow: hidden;
@@ -1277,5 +1271,15 @@ header nav .nav-menu li a:hover {
 
     .logo img {
         height: 48px; /* logo proporcional no celular */
+    }
+}
+.logo img {
+    clip-path: inset(0 100% 0 0);
+    animation: blueprintReveal 1.2s ease-out forwards;
+}
+
+@keyframes blueprintReveal {
+    to {
+        clip-path: inset(0 0 0 0);
     }
 }
