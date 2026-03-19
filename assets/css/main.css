@@ -13,7 +13,8 @@
 
 /* Ajustes base do documento */
 html {
-    font-size: 100%; /* Mantém 16px padrão */
+    font-size: 100%;
+    /* Mantém 16px padrão */
     scroll-behavior: smooth;
 }
 
@@ -75,6 +76,7 @@ body {
     overflow-x: hidden;
     font-family: var(--font-base);
 }
+
 /* ==================================================
    VARIÁVEIS GLOBAIS (Design Tokens)
    ================================================== */
@@ -119,13 +121,13 @@ header .container {
     align-items: center;
     justify-content: space-between;
     min-height: 200px;
-    
+
 }
 
 /* LOGO */
 .logo img {
     height: 70px;
-    
+
 }
 
 /* MENU */
@@ -204,7 +206,7 @@ nav a:hover {
 /* IMAGEM HERO */
 .hero-image img {
     border-radius: 12px;
-     /* Img/fototrabalho.jpg */
+    /* Img/fototrabalho.jpg */
 }
 
 /* ==================================================
@@ -279,7 +281,7 @@ nav a:hover {
 }
 
 .about-image img {
-    border-radius: 12px; 
+    border-radius: 12px;
 }
 
 .about-text h2 {
@@ -321,7 +323,7 @@ nav a:hover {
 }
 
 
- /* ==================================================
+/* ==================================================
    CONTATO (Estilo Atualizado - Card Azul)
    ================================================== */
 .contact {
@@ -331,10 +333,10 @@ nav a:hover {
 
 /* O cartão principal azul claro */
 .contact-card {
-    background-color: #F0F6FF; 
+    background-color: #F0F6FF;
     border-radius: 24px;
     padding: 3rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
 /* Grid para separar Texto (Esq) e Dados (Dir) */
@@ -375,7 +377,7 @@ nav a:hover {
 
 /* Caixinha azul do ícone */
 .icon-box {
-    background-color: #2563eb; 
+    background-color: #2563eb;
     color: white;
     width: 48px;
     height: 48px;
@@ -412,7 +414,7 @@ nav a:hover {
 
 /* Cartão Azul de Horário */
 .hours-card {
-    background-color: #1d4ed8; 
+    background-color: #1d4ed8;
     color: white;
     padding: 2rem;
     border-radius: 16px;
@@ -432,7 +434,8 @@ nav a:hover {
 /* RESPONSIVIDADE PARA O CARD DE CONTATO */
 @media (min-width: 900px) {
     .contact-grid {
-        grid-template-columns: 1fr 1fr; /* Divide em 2 colunas */
+        grid-template-columns: 1fr 1fr;
+        /* Divide em 2 colunas */
         align-items: start;
         gap: 4rem;
     }
@@ -441,6 +444,7 @@ nav a:hover {
         padding-top: 1rem;
     }
 }
+
 /* ==================================================
    FOOTER
    ================================================== */
@@ -508,6 +512,7 @@ footer a {
         font-size: 2.6rem;
     }
 }
+
 /* ==================================================
    BOTÃO WHATSAPP - MENU
    Ícone: assets/images/icons/whatsapp.svg
@@ -517,7 +522,7 @@ footer a {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: #ffffff; 
+    background-color: #ffffff;
     color: #0f0101;
     padding: 0.5rem 1rem;
     border-radius: 999px;
@@ -528,6 +533,7 @@ footer a {
     width: 18px;
     height: 18px;
 }
+
 .language-switcher {
     display: flex;
     gap: 10px;
@@ -554,6 +560,7 @@ footer a {
 #google_translate_element {
     display: none;
 }
+
 .header-actions {
     display: flex;
     align-items: center;
@@ -601,6 +608,7 @@ footer a {
 .language-switcher img:hover {
     transform: scale(1.1);
 }
+
 @media (max-width: 768px) {
     .header-actions {
         flex-direction: column;
@@ -613,6 +621,7 @@ footer a {
         justify-content: center;
     }
 }
+
 .header-wrapper {
     display: flex;
     align-items: center;
@@ -685,7 +694,7 @@ footer a {
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1100; 
+    z-index: 1100;
 }
 
 .menu-toggle span {
@@ -708,6 +717,7 @@ footer a {
 .menu-toggle.active span:nth-child(3) {
     transform: translateY(-8.5px) rotate(-45deg);
 }
+
 /* =========================
    MOBILE MENU
    ========================= */
@@ -731,8 +741,8 @@ footer a {
         align-items: center;
         display: none;
         padding: 90px 0 20px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
     }
 
     .mobile-menu.active {
@@ -753,6 +763,7 @@ footer a {
         display: flex;
     }
 }
+
 /* =========================
    OVERLAY MENU MOBILE
    ========================= */
@@ -763,7 +774,7 @@ footer a {
     background: rgba(0, 0, 0, .6);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ;
+    transition: opacity 0.3s;
     z-index: 1090;
 }
 
@@ -772,9 +783,11 @@ footer a {
     opacity: 1;
     visibility: visible;
 }
+
 .mobile-menu {
-    z-index: 1100; 
+    z-index: 1100;
 }
+
 /* =========================
    BOTÃO FLUTUANTE WHATSAPP
    ========================= */
@@ -790,20 +803,21 @@ footer a {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     z-index: 1200;
     transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .whatsapp-float:hover {
     transform: scale(1.08);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .whatsapp-float img {
     width: 28px;
     height: 28px;
 }
+
 .whatsapp-float {
     position: fixed;
     bottom: 24px;
@@ -821,6 +835,7 @@ footer a {
 .whatsapp-float img {
     width: 28px;
 }
+
 @media (max-width: 768px) {
     .whatsapp-float {
         animation: pulse 2.5s infinite;
@@ -831,13 +846,16 @@ footer a {
     0% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
     }
+
     70% {
         box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
     }
+
     100% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
     }
 }
+
 @media (min-width: 769px) {
     .whatsapp-float {
         transition: transform 0.2s ease;
@@ -847,6 +865,7 @@ footer a {
         transform: scale(1.1);
     }
 }
+
 .about-highlights {
     margin-top: 1.5rem;
 }
@@ -867,7 +886,8 @@ footer a {
     top: 6px;
     width: 16px;
     height: 16px;
-    background-color: var(--color-primary); /* azul do site */
+    background-color: var(--color-primary);
+    /* azul do site */
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17l-3.88-3.88-1.41 1.41L9 19 20.29 7.71 18.88 6.3z'/%3E%3C/svg%3E") no-repeat center;
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17l-3.88-3.88-1.41 1.41L9 19 20.29 7.71 18.88 6.3z'/%3E%3C/svg%3E") no-repeat center;
     mask-size: contain;
@@ -875,16 +895,20 @@ footer a {
 }
 
 /* Remove a linha abaixo do menu */
-header, .navbar, .menu-container {
+header,
+.navbar,
+.menu-container {
     border-bottom: none !important;
     box-shadow: none !important;
 }
 
 /* Remove a linha na seção de serviços */
-.servicos-header, hr {
-    display: none; 
+.servicos-header,
+hr {
+    display: none;
     border: none !important;
 }
+
 /* =========================
    CARROSSEL SOBRE
    ========================= */
@@ -933,6 +957,7 @@ header, .navbar, .menu-container {
         max-width: 100%;
     }
 }
+
 /* ===== HOVER MENU DESKTOP ===== */
 header nav .nav-menu li a {
     color: var(--color-dark);
@@ -956,6 +981,7 @@ header nav .nav-menu li a:hover {
 .mobile-menu .nav-menu li a:active {
     background-color: rgba(37, 99, 235, 0.08);
 }
+
 /* =========================
    MENU MOBILE - FEEDBACK DE TOQUE
    ========================= */
@@ -972,6 +998,7 @@ header nav .nav-menu li a:hover {
         color: var(--color-primary);
     }
 }
+
 /* =========================
    MENU MOBILE - ITEM CLICADO
    ========================= */
@@ -988,6 +1015,7 @@ header nav .nav-menu li a:hover {
         color: var(--color-primary);
     }
 }
+
 /* =========================
    MENU MOBILE - PULSE VIA TOUCH (JS)
    ========================= */
@@ -1006,11 +1034,9 @@ header nav .nav-menu li a:hover {
         content: "";
         position: absolute;
         inset: 0;
-        background: radial-gradient(
-            circle,
-            rgba(37, 99, 235, 0.30) 12%,
-            transparent 65%
-        );
+        background: radial-gradient(circle,
+                rgba(37, 99, 235, 0.30) 12%,
+                transparent 65%);
         opacity: 0;
         transform: scale(0.2);
         transition: opacity 0.25s ease, transform 0.25s ease;
@@ -1027,6 +1053,7 @@ header nav .nav-menu li a:hover {
         color: var(--color-primary);
     }
 }
+
 /* =========================
    AJUSTE DE ESPAÇAMENTO ABOUT - MOBILE
    ========================= */
@@ -1034,7 +1061,7 @@ header nav .nav-menu li a:hover {
 
     /* Reduz o espaço entre carrossel e texto */
     .about .container {
-        gap: 1rem; 
+        gap: 1rem;
     }
 
     /* Remove margem extra do carrossel no mobile */
@@ -1043,6 +1070,7 @@ header nav .nav-menu li a:hover {
         margin-top: 0;
     }
 }
+
 /* ==================================================
    PROJETOS DESENVOLVIDOS
    ================================================== */
@@ -1065,13 +1093,13 @@ header nav .nav-menu li a:hover {
     background-color: var(--color-light);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
 }
 
 .project-card img {
@@ -1107,6 +1135,7 @@ header nav .nav-menu li a:hover {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
 /* ==================================================
    TÍTULO - PROJETOS DESENVOLVIDOS
    ================================================== */
@@ -1136,17 +1165,19 @@ header nav .nav-menu li a:hover {
         font-size: 2.4rem;
     }
 }
+
 /* Estilização da Seção */
 .partners {
-    padding: 60px 0; /* Espaçamento acima e abaixo */
-    background-color: #f9f9f9; 
+    padding: 60px 0;
+    /* Espaçamento acima e abaixo */
+    background-color: #f9f9f9;
     text-align: center;
 }
 
-.partners-title  {
-    font-family: var(--font-base) ;
+.partners-title {
+    font-family: var(--font-base);
     font-size: 1.5rem;
-    color: #333; 
+    color: #333;
     margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1157,17 +1188,19 @@ header nav .nav-menu li a:hover {
 .partners-grid {
     display: grid;
     /* Desktop: 4 colunas de tamanho igual (linha reta) */
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 30px; /* Espaço entre as logos */
-    align-items: center; 
-    justify-items: center; 
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    /* Espaço entre as logos */
+    align-items: center;
+    justify-items: center;
 }
 
 /* Estilo das Imagens */
 .partner-logo {
     max-width: 100%;
     height: auto;
-    max-height: 80px; /* Impede que uma logo fique gigante em relação às outras */ 
+    max-height: 80px;
+    /* Impede que uma logo fique gigante em relação às outras */
     transition: filter 0.3s ease;
     opacity: 0.8;
 }
@@ -1184,7 +1217,7 @@ header nav .nav-menu li a:hover {
 @media (max-width: 768px) {
     .partners-grid {
         /* Muda para 2 colunas (2 logos por linha) */
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr);
         gap: 40px;
     }
 }
@@ -1192,9 +1225,11 @@ header nav .nav-menu li a:hover {
 /* Celular (menor que 480px) */
 @media (max-width: 480px) {
     .partner-logo {
-        max-height: 60px; /* Diminui um pouco as logos no celular */
+        max-height: 60px;
+        /* Diminui um pouco as logos no celular */
     }
 }
+
 .projects-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -1219,12 +1254,10 @@ header nav .nav-menu li a:hover {
     left: -100%;
     width: 50%;
     height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.6),
-        transparent
-    );
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.6),
+            transparent);
 }
 
 .logo:hover::after {
@@ -1236,18 +1269,17 @@ header nav .nav-menu li a:hover {
         left: 150%;
     }
 }
+
 /* EFEITO DE BRILHO NO TÍTULO PRINCIPAL */
 .shine-text {
     position: relative;
     display: inline-block;
-    background: linear-gradient(
-        110deg,
-        #0f172a 0%,
-        #0f172a 40%,
-        #b6b6b6 50%,
-        #0f172a 60%,
-        #0f172a 100%
-    );
+    background: linear-gradient(110deg,
+            #0f172a 0%,
+            #0f172a 40%,
+            #b6b6b6 50%,
+            #0f172a 60%,
+            #0f172a 100%);
     background-size: 200% auto;
     color: transparent;
     background-clip: text;
@@ -1260,16 +1292,151 @@ header nav .nav-menu li a:hover {
         background-position: -200% center;
     }
 }
+
 /* =========================
    AJUSTE DO LOGO NO MOBILE
    ========================= */
 @media (max-width: 768px) {
 
     header .container {
-        min-height: 110px; /* header mais compacto no mobile */
+        min-height: 110px;
+        /* header mais compacto no mobile */
     }
 
     .logo img {
-        height: 48px; /* logo proporcional no celular */
+        height: 48px;
+        /* logo proporcional no celular */
+    }
+}
+
+/* =========================
+   MODAL DE PROJETOS
+   ========================= */
+.project-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.project-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.project-modal-content {
+    background-color: #fff;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    border-radius: 12px;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-modal-overlay.active .project-modal-content {
+    transform: scale(1);
+}
+
+.project-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ff4757;
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2010;
+    transition: background 0.2s;
+}
+
+.project-modal-close:hover {
+    background: #ff6b81;
+}
+
+.project-modal-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-modal-image {
+    width: 100%;
+    background-color: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.project-modal-image img {
+    max-width: 100%;
+    max-height: 50vh;
+    object-fit: contain;
+}
+
+.project-modal-info {
+    padding: 2rem;
+}
+
+.project-modal-info h3 {
+    font-size: 1.8rem;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.project-modal-info p {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.project-card {
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .project-modal-body {
+        flex-direction: row;
+    }
+
+    .project-modal-image {
+        flex: 1;
+        padding: 3rem;
+    }
+
+    .project-modal-image img {
+        max-height: 70vh;
+    }
+
+    .project-modal-info {
+        width: 350px;
+        flex-shrink: 0;
+        border-left: 1px solid #e2e8f0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }

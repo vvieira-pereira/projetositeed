@@ -81,4 +81,64 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setInterval(moveCarousel, pause);
     }
+
+    /* =========================
+       MODAL DE PROJETOS
+       ========================= */
+    const projectCards = document.querySelectorAll(".project-card");
+    const modalOverlay = document.getElementById("project-modal");
+
+    if (projectCards.length > 0 && modalOverlay) {
+        const modalImg = document.getElementById("project-modal-img");
+        const modalTitle = document.getElementById("project-modal-title");
+        const modalDesc = document.getElementById("project-modal-desc");
+        const modalClose = document.querySelector(".project-modal-close");
+
+        // Abre o modal ao clicar no cartão
+        projectCards.forEach(card => {
+            card.addEventListener("click", () => {
+                const img = card.querySelector("img").src;
+                const title = card.querySelector("h3").innerText;
+                const desc = card.querySelector("p").innerText;
+
+                modalImg.src = img;
+                modalTitle.innerText = title;
+                modalDesc.innerText = desc;
+
+                modalOverlay.classList.add("active");
+                document.body.style.overflow = "hidden"; // trava rolagem
+            });
+        });
+
+        const fechaModal = () => {
+            modalOverlay.classList.remove("active");
+            document.body.style.overflow = ""; // volta rolagem
+
+            setTimeout(() => {
+                modalImg.src = "";
+                modalTitle.innerText = "";
+                modalDesc.innerText = "";
+            }, 300);
+        };
+
+        // Fechar ao clicar no botao
+        if (modalClose) {
+            modalClose.addEventListener("click", fechaModal);
+        }
+
+        // Fechar ao clicar fora do conteudo
+        modalOverlay.addEventListener("click", (e) => {
+            if (e.target === modalOverlay) {
+                fechaModal();
+            }
+        });
+
+        // Fechar ao apertar ESC
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && modalOverlay.classList.contains("active")) {
+                fechaModal();
+            }
+        });
+    }
+
 });
