@@ -245,17 +245,13 @@ nav a:hover {
     text-align: center;
 }
 
-.service-card img {
+.service-card img,
+.service-icon {
     height: 60px;
+    width: 60px;
     margin: 0 auto 1rem;
-    /* Imagens:
-       Img/service-solucoes.png
-       Img/service-foco.png
-       Img/service-seguranca.png
-       Img/service-crescimento.png
-       Img/service-suporte.png
-       Img/service-qualidade.png
-    */
+    display: block;
+    color: var(--color-primary);
 }
 
 .service-card h3 {
