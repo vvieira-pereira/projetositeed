@@ -141,4 +141,47 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /* =========================
+       HERO 3D PARALLAX TILT
+       ========================= */
+    const heroImageContainer = document.querySelector(".hero-image");
+    const heroMachineImg = document.querySelector(".hero-machine-img");
+
+    if (heroImageContainer && heroMachineImg) {
+        heroImageContainer.addEventListener("mousemove", (e) => {
+            // Desliga a animação CSS padrão durante o uso imperativo
+            heroMachineImg.style.animation = "none";
+            heroMachineImg.style.transition = "transform 0.15s ease-out, filter 0.15s ease-out";
+            
+            const rect = heroImageContainer.getBoundingClientRect();
+            const x = e.clientX - rect.left; 
+            const y = e.clientY - rect.top;  
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            // Rotação Invertida Padrão 3D e sombra oposta
+            const rotateX = ((y - centerY) / centerY) * -15; 
+            const rotateY = ((x - centerX) / centerX) * 15;  
+
+            const shadowX = (rotateY * 1.5);
+            const shadowY = (rotateX * -1.5);
+            
+            heroMachineImg.style.transform = `perspective(1200px) scale(1.05) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+            heroMachineImg.style.filter = `drop-shadow(${-shadowX}px ${-shadowY + 30}px 35px rgba(0,0,0,0.35))`;
+        });
+
+        heroImageContainer.addEventListener("mouseleave", () => {
+            // Voltar para a posição inicial de forma lenta e suave
+            heroMachineImg.style.transition = "transform 1.5s cubic-bezier(0.25, 0.8, 0.25, 1), filter 1.5s ease";
+            heroMachineImg.style.transform = "";
+            heroMachineImg.style.filter = "";
+            
+            // Retorna a chamação do Float
+            setTimeout(() => {
+                heroMachineImg.style.animation = ""; // Limpa o "none" pra voltar ao CSS puro
+            }, 100);
+        });
+    }
+
 });
