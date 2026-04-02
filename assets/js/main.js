@@ -102,17 +102,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 const desc = card.dataset.desc || "";
 
                 modalImg.src = img;
+                modalImg.classList.remove("zoomed"); // garante zoom zerado
                 modalTitle.innerText = title;
                 modalDesc.innerText = desc;
 
                 modalOverlay.classList.add("active");
-                document.body.style.overflow = "hidden"; // trava rolagem
+                document.body.style.overflow = "hidden";
             });
         });
 
+        // Zoom toggle ao clicar na imagem
+        if (modalImg) {
+            modalImg.addEventListener("click", (e) => {
+                e.stopPropagation();
+                modalImg.classList.toggle("zoomed");
+            });
+        }
+
         const fechaModal = () => {
+            modalImg.classList.remove("zoomed"); // reseta zoom
             modalOverlay.classList.remove("active");
-            document.body.style.overflow = ""; // volta rolagem
+            document.body.style.overflow = "";
 
             setTimeout(() => {
                 modalImg.src = "";

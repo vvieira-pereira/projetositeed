@@ -1364,14 +1364,15 @@ header nav .nav-menu li a:hover {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.85);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2000;
+    z-index: 99999;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 1rem;
 }
 
 .project-modal-overlay.active {
@@ -1381,17 +1382,17 @@ header nav .nav-menu li a:hover {
 
 .project-modal-content {
     background-color: #fff;
-    width: 90%;
-    max-width: 900px;
-    max-height: 90vh;
-    border-radius: 12px;
+    width: 95%;
+    max-width: 860px;
+    max-height: 92vh;
+    border-radius: 16px;
     overflow-y: auto;
     position: relative;
     display: flex;
     flex-direction: column;
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.88);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
 }
 
 .project-modal-overlay.active .project-modal-content {
@@ -1430,19 +1431,28 @@ header nav .nav-menu li a:hover {
 
 .project-modal-image {
     width: 100%;
-    background-color: #f8fafc;
+    background-color: #f0f4f8;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2.5rem 2rem;
     border-bottom: 1px solid #e2e8f0;
+    overflow: hidden;
 }
 
 .project-modal-image img {
     max-width: 100%;
-    max-height: 55vh;
+    max-height: 62vh;
     object-fit: contain;
     border-radius: 6px;
+    cursor: zoom-in;
+    transition: transform 0.4s ease;
+    transform-origin: center center;
+}
+
+.project-modal-image img.zoomed {
+    transform: scale(1.85);
+    cursor: zoom-out;
 }
 
 .project-modal-info {
