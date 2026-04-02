@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
             card.addEventListener("click", () => {
                 const img = card.querySelector("img").src;
                 const title = card.querySelector("h3").innerText;
-                const desc = card.querySelector("p").innerText;
+                const desc = card.dataset.desc || "";
 
                 modalImg.src = img;
                 modalTitle.innerText = title;
