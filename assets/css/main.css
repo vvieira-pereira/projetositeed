@@ -1446,13 +1446,10 @@ header nav .nav-menu li a:hover {
     object-fit: contain;
     border-radius: 6px;
     cursor: zoom-in;
-    transition: transform 0.4s ease;
+    transition: transform 0.2s ease;
     transform-origin: center center;
-}
-
-.project-modal-image img.zoomed {
-    transform: scale(1.85);
-    cursor: zoom-out;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .project-modal-info {

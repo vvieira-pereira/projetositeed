@@ -111,16 +111,154 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Zoom toggle ao clicar na imagem
+        // ── PAN + ZOOM ENGINE ──────────────────────────────────────
         if (modalImg) {
+            let scale = 1;
+            let originX = 50; // % dentro da imagem
+            let originY = 50;
+            let isDragging = false;
+            let startX, startY, lastTranslateX = 0, lastTranslateY = 0;
+            let translateX = 0, translateY = 0;
+
+            const MIN_SCALE = 1;
+            const MAX_SCALE = 4;
+            const ZOOM_STEP = 0.35;
+
+            function applyTransform() {
+                modalImg.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+                modalImg.style.cursor = scale > 1 ? (isDragging ? "grabbing" : "grab") : "zoom-in";
+            }
+
+            function resetZoom() {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                lastTranslateX = 0;
+                lastTranslateY = 0;
+                modalImg.style.transform = "";
+                modalImg.style.cursor = "zoom-in";
+            }
+
+            // Scroll do mouse = zoom centrado no cursor
+            modalImg.addEventListener("wheel", (e) => {
+                e.preventDefault();
+                const rect = modalImg.getBoundingClientRect();
+                // posição do cursor dentro da imagem em %
+                const cursorX = ((e.clientX - rect.left) / rect.width - 0.5);
+                const cursorY = ((e.clientY - rect.top) / rect.height - 0.5);
+
+                const delta = e.deltaY < 0 ? ZOOM_STEP : -ZOOM_STEP;
+                const newScale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale + delta));
+
+                if (newScale === scale) return;
+
+                // ajusta translação para manter o ponto sob o cursor fixo
+                translateX -= cursorX * (newScale - scale) * rect.width / scale;
+                translateY -= cursorY * (newScale - scale) * rect.height / scale;
+                scale = newScale;
+
+                if (scale === MIN_SCALE) { translateX = 0; translateY = 0; }
+                lastTranslateX = translateX;
+                lastTranslateY = translateY;
+                applyTransform();
+            }, { passive: false });
+
+            // Click simples = zoom 2x centrado no ponto clicado (toggle)
             modalImg.addEventListener("click", (e) => {
                 e.stopPropagation();
-                modalImg.classList.toggle("zoomed");
+                if (scale > 1) {
+                    resetZoom();
+                } else {
+                    const rect = modalImg.getBoundingClientRect();
+                    const cx = ((e.clientX - rect.left) / rect.width - 0.5);
+                    const cy = ((e.clientY - rect.top) / rect.height - 0.5);
+                    scale = 2;
+                    translateX = -cx * rect.width / 2;
+                    translateY = -cy * rect.height / 2;
+                    lastTranslateX = translateX;
+                    lastTranslateY = translateY;
+                    applyTransform();
+                }
             });
+
+            // Drag para navegar (mouse)
+            modalImg.addEventListener("mousedown", (e) => {
+                if (scale <= 1) return;
+                e.preventDefault();
+                isDragging = true;
+                startX = e.clientX;
+                startY = e.clientY;
+                applyTransform();
+            });
+
+            window.addEventListener("mousemove", (e) => {
+                if (!isDragging) return;
+                translateX = lastTranslateX + (e.clientX - startX) / scale;
+                translateY = lastTranslateY + (e.clientY - startY) / scale;
+                applyTransform();
+            });
+
+            window.addEventListener("mouseup", () => {
+                if (!isDragging) return;
+                isDragging = false;
+                lastTranslateX = translateX;
+                lastTranslateY = translateY;
+                applyTransform();
+            });
+
+            // Touch: pinch para zoom + drag
+            let lastDist = null;
+            modalImg.addEventListener("touchstart", (e) => {
+                if (e.touches.length === 2) {
+                    lastDist = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY
+                    );
+                } else if (e.touches.length === 1 && scale > 1) {
+                    isDragging = true;
+                    startX = e.touches[0].clientX;
+                    startY = e.touches[0].clientY;
+                }
+            }, { passive: true });
+
+            modalImg.addEventListener("touchmove", (e) => {
+                if (e.touches.length === 2) {
+                    e.preventDefault();
+                    const dist = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY
+                    );
+                    if (lastDist) {
+                        const delta = (dist - lastDist) * 0.015;
+                        scale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale + delta));
+                        if (scale === MIN_SCALE) { translateX = 0; translateY = 0; }
+                        applyTransform();
+                    }
+                    lastDist = dist;
+                } else if (e.touches.length === 1 && isDragging) {
+                    translateX = lastTranslateX + (e.touches[0].clientX - startX) / scale;
+                    translateY = lastTranslateY + (e.touches[0].clientY - startY) / scale;
+                    applyTransform();
+                }
+            }, { passive: false });
+
+            modalImg.addEventListener("touchend", (e) => {
+                lastDist = null;
+                if (isDragging) {
+                    isDragging = false;
+                    lastTranslateX = translateX;
+                    lastTranslateY = translateY;
+                }
+            });
+
+            // Expõe reset para ser chamado ao fechar
+            window._resetModalZoom = resetZoom;
         }
+        // ── FIM PAN + ZOOM ENGINE ───────────────────────────────────
+
 
         const fechaModal = () => {
-            modalImg.classList.remove("zoomed"); // reseta zoom
+            if (window._resetModalZoom) window._resetModalZoom();
             modalOverlay.classList.remove("active");
             document.body.style.overflow = "";
 
