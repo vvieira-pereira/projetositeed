@@ -110,6 +110,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.body.style.overflow = "hidden";
 
                 if (window._resetModalZoom) window._resetModalZoom();
+                setTimeout(() => {
+                    if (window.innerWidth <= 768 && window._setMobileZoom) {
+                        window._setMobileZoom();
+                    }
+                }, 50);
             });
         });
 
@@ -277,6 +282,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Expõe reset para ser chamado ao fechar
             window._resetModalZoom = resetZoom;
+
+            window._setMobileZoom = function() {
+                scale = 2.3; // Aproxima a foto cortando as bordas brancas nativas
+                translateX = 0;
+                translateY = 0;
+                lastTranslateX = 0;
+                lastTranslateY = 0;
+                applyTransform();
+            };
 
 
         }
