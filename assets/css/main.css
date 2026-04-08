@@ -966,7 +966,7 @@ hr {
 .carousel {
     width: 100%;
     max-width: 520px;
-    height: 360px;
+    height: 380px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 20px;
@@ -999,7 +999,7 @@ hr {
 /* MOBILE */
 @media (max-width: 768px) {
     .carousel {
-        height: 250px;
+        height: 270px;
         max-width: 100%;
     }
 }
