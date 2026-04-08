@@ -1437,7 +1437,7 @@ header nav .nav-menu li a:hover {
     justify-content: center;
     padding: 2rem 1.5rem;
     border-bottom: 1px solid #e2e8f0;
-    /* overflow removido — não cortar imagem durante pan */
+    overflow: hidden;
 }
 
 .project-modal-image img {
