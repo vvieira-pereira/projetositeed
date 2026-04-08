@@ -111,7 +111,7 @@ body {
 /* ==================================================
    HEADER
    ================================================== */
-body > header {
+body>header {
     background-color: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -121,7 +121,7 @@ body > header {
     z-index: 9999;
 }
 
-body > header .container {
+body>header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -231,15 +231,30 @@ nav a:hover {
 
 /* Animação Contínua (Levitação) */
 @keyframes floatMachine {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 /* Animação Entrada da Página */
 @keyframes entranceFade {
-    0% { transform: scale(0.9) translateY(40px); opacity: 0; }
-    100% { transform: scale(1) translateY(0); opacity: 1; }
+    0% {
+        transform: scale(0.9) translateY(40px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
 }
 
 /* Hover na foto */
@@ -991,7 +1006,7 @@ hr {
 
 .carousel-track img {
     min-width: 100%;
-    height: 520px;
+    height: 620px;
     flex-shrink: 0;
     object-fit: contain;
     object-position: center center;
