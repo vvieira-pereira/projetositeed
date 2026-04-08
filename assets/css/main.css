@@ -997,7 +997,7 @@ hr {
     object-position: center center;
     padding: 0;
     background-color: transparent;
-    transform: scale(1.50);
+    transform: scale(1.30);
     transform-origin: center center;
 }
 
@@ -1011,7 +1011,7 @@ hr {
 
     .carousel-track img {
         height: 320px;
-        transform: scale(1.50);
+        transform: scale(1.30);
     }
 }
 
