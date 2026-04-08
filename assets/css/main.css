@@ -995,7 +995,7 @@ hr {
     flex-shrink: 0;
     object-fit: contain;
     object-position: center center;
-    padding: 0 12px;
+    padding: 0 16px;
     background-color: transparent;
     transform: scale(1.19);
     transform-origin: center center;
