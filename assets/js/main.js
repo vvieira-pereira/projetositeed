@@ -163,24 +163,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 applyTransform();
             }, { passive: false });
 
-            // Click simples = zoom 2x centrado no ponto clicado (toggle)
-            modalImg.addEventListener("click", (e) => {
-                e.stopPropagation();
-                if (scale > 1) {
-                    resetZoom();
-                } else {
-                    const rect = modalImg.getBoundingClientRect();
-                    const cx = ((e.clientX - rect.left) / rect.width - 0.5);
-                    const cy = ((e.clientY - rect.top) / rect.height - 0.5);
-                    scale = 2;
-                    translateX = -cx * rect.width / 2;
-                    translateY = -cy * rect.height / 2;
-                    lastTranslateX = translateX;
-                    lastTranslateY = translateY;
-                    applyTransform();
-                }
-            });
-
             let hasDragged = false; // flag para distinguir drag de click
 
             // Drag para navegar (mouse) — ANTES do click para a flag funcionar
@@ -245,6 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else if (e.touches.length === 1) {
                     touchStartX = e.touches[0].clientX;
                     touchStartY = e.touches[0].clientY;
+                    hasDragged = false;
                     if (scale > 1) {
                         isDragging = true;
                         startX = touchStartX;
@@ -256,6 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
             modalImg.addEventListener("touchmove", (e) => {
                 if (e.touches.length === 2) {
                     e.preventDefault();
+                    hasDragged = true;
                     const dist = Math.hypot(
                         e.touches[0].clientX - e.touches[1].clientX,
                         e.touches[0].clientY - e.touches[1].clientY
@@ -271,8 +255,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     lastDist = dist;
                 } else if (e.touches.length === 1 && isDragging) {
                     e.preventDefault();
-                    translateX = lastTranslateX + (e.touches[0].clientX - startX) / scale;
-                    translateY = lastTranslateY + (e.touches[0].clientY - startY) / scale;
+                    const dx = e.touches[0].clientX - startX;
+                    const dy = e.touches[0].clientY - startY;
+                    if (Math.abs(dx) > 3 || Math.abs(dy) > 3) hasDragged = true;
+                    translateX = lastTranslateX + dx / scale;
+                    translateY = lastTranslateY + dy / scale;
                     applyTransform();
                 }
             }, { passive: false });
