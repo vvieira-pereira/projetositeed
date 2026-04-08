@@ -1453,18 +1453,19 @@ header nav .nav-menu li a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    flex: 1;
+    width: 100%;
 }
 
 .project-modal-image {
     width: 100%;
     flex: 1;
-    min-height: 60vh;
-    background-color: #f0f4f8;
+    min-height: 50vh;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 1rem;
     border-bottom: 1px solid #e2e8f0;
     overflow: hidden;
 }
@@ -1504,13 +1505,4 @@ header nav .nav-menu li a:hover {
 .project-card {
     cursor: pointer;
 }
-
-@media (min-width: 768px) {
-    .project-modal-content {
-        max-width: 700px;
-    }
-
-    .project-modal-image img {
-        max-height: 60vh;
-    }
-}
+
