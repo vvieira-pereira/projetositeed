@@ -1412,7 +1412,7 @@ header nav .nav-menu li a:hover {
     max-width: 1400px;
     height: 95vh;
     border-radius: 16px;
-    overflow-y: auto;
+    overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1455,12 +1455,13 @@ header nav .nav-menu li a:hover {
     align-items: center;
     flex: 1;
     width: 100%;
+    min-height: 0;
 }
 
 .project-modal-image {
     width: 100%;
     flex: 1;
-    min-height: 50vh;
+    min-height: 0;
     background-color: transparent;
     display: flex;
     align-items: center;
@@ -1488,6 +1489,9 @@ header nav .nav-menu li a:hover {
     padding: 1.5rem 2rem 2rem;
     width: 100%;
     text-align: center;
+    flex-shrink: 0;
+    overflow-y: auto;
+    max-height: 35vh;
 }
 
 .project-modal-info h3 {
