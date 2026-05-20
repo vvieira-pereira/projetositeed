@@ -1502,9 +1502,7 @@ header nav .nav-menu li a:hover {
 }
 
 .project-modal-info p {
-    font-size: 1rem;
-    color: #475569;
-    line-height: 1.6;
+    display: none;
 }
 
 .project-card {
